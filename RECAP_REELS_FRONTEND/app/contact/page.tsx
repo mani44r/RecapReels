@@ -74,20 +74,22 @@ export default function Contact() {
   };
 
   return (
-    <div className="pt-20">
+    <div className="pt-20 bg-[#030303] min-h-screen text-white">
       {/* Hero */}
-      <section className="py-56 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 sm:py-40 relative overflow-hidden border-b border-white/5">
+        <div className="absolute inset-0 bg-grid-pattern opacity-30"></div>
+        <div className="absolute top-0 right-1/4 w-[500px] h-[300px] bg-purple-600/20 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-neutral-900 mb-10 tracking-tight">
-              Get in Touch
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 sm:mb-10 tracking-tight">
+              Get in <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-purple-500">Touch</span>
             </h1>
-            <p className="text-xl md:text-2xl text-neutral-700 leading-relaxed">
+            <p className="text-base sm:text-xl md:text-2xl text-neutral-400 font-light leading-relaxed max-w-2xl mx-auto px-2 border-transparent">
               Ready to elevate your brand with professional short-form video content? 
               Let's discuss your project and how we can help your business grow.
             </p>
@@ -96,9 +98,9 @@ export default function Contact() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-56 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+      <section className="py-24 sm:py-40 relative">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
             {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -106,12 +108,12 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl font-bold text-neutral-900 mb-12">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 sm:mb-12 border-l-4 border-violet-500 pl-4">
                 Book a Demo or Get a Quote
               </h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6 glass-panel p-6 sm:p-10 rounded-3xl border border-white/10">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-neutral-700 mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-neutral-400 mb-2">
                     Full Name *
                   </label>
                   <input
@@ -121,13 +123,13 @@ export default function Contact() {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-[#0066ff] focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition-all text-white placeholder-neutral-600"
                     placeholder="John Doe"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-neutral-700 mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-neutral-400 mb-2">
                     Business Email *
                   </label>
                   <input
@@ -137,13 +139,13 @@ export default function Contact() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-[#0066ff] focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition-all text-white placeholder-neutral-600"
                     placeholder="john@company.com"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-neutral-700 mb-2">
+                  <label htmlFor="company" className="block text-sm font-medium text-neutral-400 mb-2">
                     Company Name *
                   </label>
                   <input
@@ -153,13 +155,13 @@ export default function Contact() {
                     required
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-[#0066ff] focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition-all text-white placeholder-neutral-600"
                     placeholder="Your Company"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-neutral-700 mb-2">
+                  <label htmlFor="phone" className="block text-sm font-medium text-neutral-400 mb-2">
                     Phone Number
                   </label>
                   <input
@@ -168,13 +170,13 @@ export default function Contact() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-[#0066ff] focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition-all text-white placeholder-neutral-600"
                     placeholder="+1 (234) 567-890"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="service" className="block text-sm font-medium text-neutral-700 mb-2">
+                  <label htmlFor="service" className="block text-sm font-medium text-neutral-400 mb-2">
                     Service Interest
                   </label>
                   <select
@@ -182,20 +184,20 @@ export default function Contact() {
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-[#0066ff] focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-3 bg-[#0a0a0a] border border-white/10 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition-all text-white appearance-none"
                   >
-                    <option value="">Select a service</option>
-                    <option value="short-form-videos">Short-Form Video Creation</option>
-                    <option value="event-recap">Event Recap Videos</option>
-                    <option value="social-media">Social Media Reels & Ads</option>
-                    <option value="content-strategy">Content Strategy</option>
-                    <option value="editing">Editing & Post-Production</option>
-                    <option value="other">Other</option>
+                    <option value="" className="bg-[#0a0a0a]">Select a service</option>
+                    <option value="short-form-videos" className="bg-[#0a0a0a]">Short-Form Video Creation</option>
+                    <option value="event-recap" className="bg-[#0a0a0a]">Event Recap Videos</option>
+                    <option value="social-media" className="bg-[#0a0a0a]">Social Media Reels & Ads</option>
+                    <option value="content-strategy" className="bg-[#0a0a0a]">Content Strategy</option>
+                    <option value="editing" className="bg-[#0a0a0a]">Editing & Post-Production</option>
+                    <option value="other" className="bg-[#0a0a0a]">Other</option>
                   </select>
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-neutral-700 mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-neutral-400 mb-2">
                     Project Details *
                   </label>
                   <textarea
@@ -205,13 +207,13 @@ export default function Contact() {
                     rows={5}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-[#0066ff] focus:border-transparent outline-none transition-all resize-none"
+                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition-all resize-none text-white placeholder-neutral-600"
                     placeholder="Tell us about your project, timeline, and goals..."
                   />
                 </div>
 
                 {submitStatus === 'error' && (
-                  <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-800 flex items-start gap-3">
+                  <div className="p-4 bg-red-950/50 border border-red-500/50 rounded-lg text-red-300 flex items-start gap-3">
                     <svg className="w-5 h-5 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
                     </svg>
@@ -223,7 +225,7 @@ export default function Contact() {
                 )}
 
                 {submitStatus === 'success' && (
-                  <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
+                  <div className="p-4 bg-green-950/50 border border-green-500/50 rounded-lg text-green-300">
                     Thank you! We've received your message and will get back to you within 24 hours.
                   </div>
                 )}
@@ -231,7 +233,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full px-8 py-4 bg-indigo-600 text-white rounded-lg font-medium hover:bg-purple-700 transition-colors text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full px-8 py-4 bg-violet-600 text-white rounded-lg font-bold hover:bg-violet-500 transition-colors text-base sm:text-lg disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_20px_rgba(139,92,246,0.2)]"
                 >
                   {isSubmitting ? 'Submitting...' : 'Submit Inquiry'}
                 </button>
@@ -244,13 +246,13 @@ export default function Contact() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="space-y-8"
+              className="space-y-8 lg:mt-6"
             >
               <div>
-                <h2 className="text-3xl font-bold text-neutral-900 mb-12">
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 sm:mb-8 border-l-4 border-violet-500 pl-4">
                   Contact Information
                 </h2>
-                <p className="text-lg text-neutral-600 mb-12 leading-relaxed">
+                <p className="text-sm sm:text-lg text-neutral-400 mb-8 sm:mb-12 font-light leading-relaxed">
                   Prefer to reach out directly? Use the contact information below, 
                   or fill out the form and we'll get back to you within 24 hours.
                 </p>
@@ -258,9 +260,9 @@ export default function Contact() {
 
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
                     <svg
-                      className="w-6 h-6 text-white"
+                      className="w-5 h-5 sm:w-6 sm:h-6 text-violet-400"
                       fill="none"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -272,10 +274,10 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg font-semibold text-neutral-900 mb-1">Email</h3>
+                    <h3 className="text-base sm:text-lg font-semibold text-white mb-1">Email</h3>
                     <a
                       href="mailto:recapreelsbusiness@gmail.com"
-                      className="text-neutral-600 hover:text-indigo-600 transition-colors"
+                      className="text-neutral-400 font-light text-sm sm:text-base hover:text-violet-400 transition-colors break-all"
                     >
                       recapreelsbusiness@gmail.com
                     </a>
@@ -283,9 +285,9 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-start">
-                  <div className="w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
                     <svg
-                      className="w-6 h-6 text-white"
+                      className="w-5 h-5 sm:w-6 sm:h-6 text-violet-400"
                       fill="none"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -297,10 +299,10 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg font-semibold text-neutral-900 mb-1">Phone</h3>
+                    <h3 className="text-base sm:text-lg font-semibold text-white mb-1">Phone</h3>
                     <a
                       href="tel:+916304583037"
-                      className="text-neutral-600 hover:text-indigo-600 transition-colors"
+                      className="text-neutral-400 font-light text-sm sm:text-base hover:text-violet-400 transition-colors break-all"
                     >
                       +91 630-458-3037
                     </a>
@@ -308,9 +310,9 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-start">
-                  <div className="w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
                     <svg
-                      className="w-6 h-6 text-white"
+                      className="w-5 h-5 sm:w-6 sm:h-6 text-violet-400"
                       fill="none"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -323,10 +325,10 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg font-semibold text-neutral-900 mb-1">Location</h3>
+                    <h3 className="text-base sm:text-lg font-semibold text-white mb-1">Location</h3>
                     <a
                       href="https://maps.app.goo.gl/dovKBQok45w6mrJu9"
-                      className="text-neutral-600 hover:text-indigo-600 transition-colors"
+                      className="text-neutral-400 font-light text-sm sm:text-base hover:text-violet-400 transition-colors block"
                     >
                       Sri Sri Gurudatta Apartments, Plot Nos. 679 & 682,
                       Gokul Plots, KPHB, Hyderabad, Telangana, India - 500072
@@ -335,14 +337,14 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="bg-neutral-50 p-8 rounded-xl border border-neutral-200">
-                <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+              <div className="glass-panel p-6 sm:p-8 rounded-2xl border border-white/10 bg-white/5 mt-8">
+                <h3 className="text-base sm:text-lg font-semibold text-white mb-2">
                   Business Hours
                 </h3>
-                <p className="text-neutral-600">
+                <p className="text-neutral-400 font-light text-sm sm:text-base mb-1">
                   Monday - Friday: 9:00 AM - 6:00 PM EST
                 </p>
-                <p className="text-neutral-600">
+                <p className="text-neutral-400 font-light text-sm sm:text-base">
                   We respond to all inquiries within 24 hours.
                 </p>
               </div>

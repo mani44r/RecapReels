@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import Preloader from "@/components/Preloader";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,6 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className="antialiased">
+        <Preloader />
         <Navigation />
         <main className="min-h-screen">
           {children}

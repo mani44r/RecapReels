@@ -31,7 +31,7 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1, delay: 1.4, ease: [0.22, 1, 0.36, 1] }}
             className="text-center max-w-5xl mx-auto"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8">
@@ -51,7 +51,7 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 1, delay: 1.6, ease: [0.22, 1, 0.36, 1] }}
               className="flex flex-col sm:flex-row gap-5 justify-center items-center"
             >
               <Link
@@ -77,7 +77,7 @@ export default function Home() {
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 1 }}
+          transition={{ delay: 2.4, duration: 1 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         >
           <span className="text-xs text-neutral-500 uppercase tracking-widest">Scroll</span>
