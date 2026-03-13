@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# Google Service Account Key
+google-service-account.json
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build output (if any future build folder)
+dist/
+build/
+
+# IDE files
+.vscode/
+.idea/
