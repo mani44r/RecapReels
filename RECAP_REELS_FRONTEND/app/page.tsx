@@ -2,8 +2,34 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const [animConfig, setAnimConfig] = useState({
+    heroDelay: 1.6, 
+    contentDelay: 1.7,
+    scrollDelay: 2.2,
+    isReturning: false
+  });
+
+  useEffect(() => {
+    // If the preloader has already been executed in this session, skip the initial zero-opacity state.
+    // This allows instant visibility when navigating back to Home via soft-routing.
+    if (sessionStorage.getItem('preloaderShown')) {
+      const timestamp = sessionStorage.getItem('preloaderTimestamp');
+      const timeSince = timestamp ? Date.now() - parseInt(timestamp) : 5000;
+      
+      // Give the actual preloader exactly 2 seconds to finish if they click home super rapidly
+      if (timeSince > 2000) {
+        setAnimConfig({
+          heroDelay: 0,
+          contentDelay: 0,
+          scrollDelay: 0,
+          isReturning: true
+        });
+      }
+    }
+  }, []);
   const reels = [
     { title: 'Brand Story', src: '/reels/v1.mp4' },
     { title: 'Event Highlights', src: '/reels/v1 copy.mp4' },
@@ -13,7 +39,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="bg-[#030303] text-white min-h-screen selection:bg-violet-500/30">
+    <div className="bg-[#030303] text-white min-h-screen selection:bg-violet-500/30 overflow-hidden">
       
       {/* 
         ========================================
@@ -29,9 +55,10 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-10 pb-20">
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            key={`hero-${animConfig.isReturning}`}
+            initial={animConfig.isReturning ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.4, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, delay: animConfig.heroDelay, ease: [0.76, 0, 0.24, 1] }} 
             className="text-center max-w-5xl mx-auto"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8">
@@ -49,9 +76,10 @@ export default function Home() {
             </p>
 
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              key={`content-${animConfig.isReturning}`}
+              initial={animConfig.isReturning ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 1.6, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.8, delay: animConfig.contentDelay, ease: [0.76, 0, 0.24, 1] }}
               className="flex flex-col sm:flex-row gap-5 justify-center items-center"
             >
               <Link
@@ -75,9 +103,10 @@ export default function Home() {
         
         {/* Scroll Indicator */}
         <motion.div 
-          initial={{ opacity: 0 }}
+          key={`scroll-${animConfig.isReturning}`}
+          initial={animConfig.isReturning ? { opacity: 1 } : { opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 2.4, duration: 1 }}
+          transition={{ delay: animConfig.scrollDelay, duration: 1 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         >
           <span className="text-xs text-neutral-500 uppercase tracking-widest">Scroll</span>
