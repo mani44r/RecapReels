@@ -66,9 +66,9 @@ export default function Home() {
               <span className="text-sm font-medium text-neutral-300">The New Standard for B2B Content</span>
             </div>
 
-            <h1 className="text-4xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold tracking-tighter mb-6 sm:mb-8 leading-[1.1]">
-              Grow your <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 via-purple-500 to-indigo-500">business</span> <br className="hidden sm:block" />
-              with short form <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-cyan-400">video content.</span>
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter mb-6 sm:mb-8 leading-[1.1]">
+              Grow your business <br />
+              with short form video content.
             </h1>
 
             <p className="text-base sm:text-xl lg:text-2xl text-neutral-400 mb-8 sm:mb-12 max-w-3xl mx-auto font-light leading-relaxed px-4 sm:px-0">
