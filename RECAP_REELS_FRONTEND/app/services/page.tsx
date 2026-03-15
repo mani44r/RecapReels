@@ -322,31 +322,7 @@ export default function Services() {
   return (
     <div className="bg-[#030303] min-h-screen text-white pt-20">
       
-      {/* Hero Section */}
-      <section className="relative py-16 sm:py-32 overflow-hidden border-b border-white/5">
-        <div className="absolute inset-0 bg-grid-pattern opacity-30"></div>
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-purple-600/20 rounded-full blur-[120px] pointer-events-none"></div>
 
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-center"
-          >
-             <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-6 sm:mb-8">
-              <span className="text-[10px] sm:text-xs font-semibold tracking-widest text-neutral-300 uppercase">Pricing & Services</span>
-            </div>
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white mb-4 sm:mb-6 tracking-tight leading-tight">
-              Invest in your <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-purple-500">Visual Identity</span>
-            </h1>
-            <p className="text-base sm:text-lg md:text-xl text-neutral-400 font-light leading-relaxed max-w-2xl mx-auto px-2">
-              Transparent, premium plans designed for modern startups, agencies, and elite brands. No hidden fees. Just results.
-            </p>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Service Menu + One Day Plan */}
       <section className="py-16 sm:py-24 relative overflow-hidden">
