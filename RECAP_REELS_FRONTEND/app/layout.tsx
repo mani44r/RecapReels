@@ -18,7 +18,14 @@ export const metadata: Metadata = {
   authors: [
     { name: "RecapReels", url: "https://recapreels.in" },
     { name: "Amaram Rushi Vivek", url: "https://rushivivek.github.io/" },
-  ]
+  ],
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png', sizes: '32x32' },
+    ],
+    apple: { url: '/icon.png', sizes: '180x180', type: 'image/png' },
+  },
 };
 
 export default function RootLayout({
