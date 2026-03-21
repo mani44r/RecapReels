@@ -116,31 +116,15 @@ export default function BecomeACreator() {
             {/* iPhone Model */}
             <div>
               <label className="block text-sm font-medium text-neutral-300 mb-2">iPhone Model</label>
-              <select
+              <input
+                type="text"
                 name="iphoneModel"
                 required
                 value={formData.iphoneModel}
                 onChange={handleChange}
-                className="w-full bg-[#0a0a0a] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-violet-500 transition-colors text-sm"
-              >
-                <option value="">Select your iPhone model</option>
-                <option>iPhone 16 Pro Max</option>
-                <option>iPhone 16 Pro</option>
-                <option>iPhone 16 Plus</option>
-                <option>iPhone 16</option>
-                <option>iPhone 15 Pro Max</option>
-                <option>iPhone 15 Pro</option>
-                <option>iPhone 15 Plus</option>
-                <option>iPhone 15</option>
-                <option>iPhone 14 Pro Max</option>
-                <option>iPhone 14 Pro</option>
-                <option>iPhone 14 Plus</option>
-                <option>iPhone 14</option>
-                <option>iPhone 13 Pro Max</option>
-                <option>iPhone 13 Pro</option>
-                <option>iPhone 13</option>
-                <option>Other</option>
-              </select>
+                placeholder="e.g. iPhone 15 Pro Max"
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-neutral-500 focus:outline-none focus:border-violet-500 transition-colors text-sm"
+              />
             </div>
 
             {/* Experience */}
