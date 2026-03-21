@@ -97,6 +97,12 @@ export default function Home() {
               >
                 Explore Services
               </Link>
+              <Link
+                href="/become-a-creator"
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 font-semibold text-white transition-all duration-300 ease-in-out bg-transparent border border-violet-500/40 rounded-full hover:bg-violet-500/10 w-full sm:w-auto text-base sm:text-lg backdrop-blur-sm"
+              >
+                Become a Creator
+              </Link>
             </motion.div>
           </motion.div>
         </div>
