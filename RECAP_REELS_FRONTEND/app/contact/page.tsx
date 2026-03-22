@@ -31,7 +31,6 @@ export default function Contact() {
     setSubmitStatus('idle');
     setErrorMessage('');
 
-    const apiBase = process.env.NEXT_PUBLIC_API_URL || '';
     const payload = {
       fullName: formData.name,
       businessEmail: formData.email,
@@ -41,7 +40,7 @@ export default function Contact() {
     };
 
     try {
-      const res = await fetch(`${apiBase}/api/lead/submit`, {
+      const res = await fetch(`https://recap-reels-backend-1.onrender.com/api/lead/submit`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
