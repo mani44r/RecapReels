@@ -21,10 +21,24 @@ export default function BecomeACreator() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate submission — wire up to your backend later
-    await new Promise((res) => setTimeout(res, 1200));
-    setLoading(false);
-    setSubmitted(true);
+    try {
+      const apiBase = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+      console.log('[BecomeACreator] Posting to:', `${apiBase}/api/creator/apply`);
+      const res = await fetch(`${apiBase}/api/creator/apply`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        alert('Submission failed. Please try again.');
+      }
+    } catch (err) {
+      alert('Network error. Please check your connection.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
