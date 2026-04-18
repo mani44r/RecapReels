@@ -54,12 +54,14 @@ export default function Navigation() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/contact"
+            <a
+              href="https://forms.gle/SykiNKbBuVezYsNo7"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-6 py-2.5 bg-white/10 border border-white/20 backdrop-blur-md text-white rounded-full font-medium hover:bg-white hover:text-black transition-all shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]"
             >
               Book a Demo
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -107,13 +109,15 @@ export default function Navigation() {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                href="/contact"
+              <a
+                href="https://forms.gle/SykiNKbBuVezYsNo7"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block w-full text-center px-6 py-4 sm:py-3 mt-4 sm:mt-3 bg-gradient-to-r from-violet-500 to-purple-600 text-white rounded-lg font-medium hover:from-violet-600 hover:to-purple-700 transition-all text-base sm:text-sm shadow-[0_0_15px_rgba(139,92,246,0.3)]"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Book a Demo
-              </Link>
+              </a>
             </div>
           </motion.div>
         )}

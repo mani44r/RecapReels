@@ -82,15 +82,17 @@ export default function Home() {
               transition={{ duration: 0.8, delay: animConfig.contentDelay, ease: [0.76, 0, 0.24, 1] }}
               className="flex flex-col sm:flex-row gap-5 justify-center items-center"
             >
-              <Link
-                href="/contact"
+              <a
+                href="https://forms.gle/SykiNKbBuVezYsNo7"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group relative inline-flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 font-semibold text-white transition-all duration-300 ease-in-out bg-violet-600 rounded-full hover:bg-violet-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-600 shadow-[0_0_40px_-5px_rgba(139,92,246,0.4)] hover:shadow-[0_0_60px_-10px_rgba(139,92,246,0.6)] w-full sm:w-auto text-base sm:text-lg"
               >
                 <span>Book Your Demo</span>
                 <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
-              </Link>
+              </a>
               <Link
                 href="/services"
                 className="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 font-semibold text-white transition-all duration-300 ease-in-out bg-transparent border border-white/20 rounded-full hover:bg-white/10 w-full sm:w-auto text-base sm:text-lg backdrop-blur-sm"

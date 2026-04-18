@@ -3,6 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const leadRoutes = require("./routes/lead.routes");
+const creatorRoutes = require("./routes/creator.routes");
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/lead", leadRoutes);
+app.use("/api/creator", creatorRoutes);
 
 const { server } = require("./config");
 const PORT = server.port;
