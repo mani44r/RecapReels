@@ -71,10 +71,6 @@ export default function Footer() {
 
         <div className="border-t border-white/5 mt-12 sm:mt-16 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-light text-neutral-600 text-center sm:text-left">
           <p>&copy; {new Date().getFullYear()} RecapReels Studio. All rights reserved.</p>
-          <div className="flex gap-4">
-             <Link href="#" className="hover:text-neutral-300 transition-colors">Privacy Policy</Link>
-             <Link href="#" className="hover:text-neutral-300 transition-colors">Terms of Service</Link>
-          </div>
         </div>
       </div>
     </footer>
